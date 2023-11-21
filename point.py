@@ -1,3 +1,4 @@
+from math import abs
 class Point:
     def __init__(self, x, y) -> None:
         self.x = x
@@ -12,7 +13,7 @@ class Point:
         Returns:
             float or int: distance.
         """
-        pass
+        return abs(self.y)
 
     def distance_from_Ycoordinate(self):
         """
@@ -23,7 +24,7 @@ class Point:
         Returns:
             float or int: distance.
         """
-        pass
+        return abs(self.x)
 
     def getQuadrant(self):
         """
@@ -34,7 +35,15 @@ class Point:
         Returns:
             int: quadrant.
         """
-        pass
+        if self.x>0 and self.y>0:
+            return 1
+        elif self.y>0 and self.x<0:
+            return 2
+        elif self.x<0 and self.y<0:
+            return 3
+        elif self.x>0 and self.y<0:
+            return 4
+        
 
     def on_Xcoordinate(self):
         """
@@ -45,7 +54,7 @@ class Point:
         Returns:
             bool: result.
         """
-        pass
+        return self.y==0
 
     def on_Ycoordinate(self):
         """
@@ -56,5 +65,5 @@ class Point:
         Returns:
             bool: result.
         """
-        pass
+        return self.x==0
  
